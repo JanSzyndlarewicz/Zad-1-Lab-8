@@ -10,5 +10,10 @@ public class Main {
 
        Lokata z = new Lokata(2, 33.05, true);
        System.out.println(z);
+
+       Klient y = new Klient("Zbych", "21342342", 5);
+       System.out.println(y);
+       y.wyswietlLokaty();
+       System.out.println(y.Oblicz());
     }
 }

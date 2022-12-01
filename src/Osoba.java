@@ -27,6 +27,8 @@ public abstract class Osoba {
         this.pesel = pesel;
     }
 
+
+
     public abstract double Oblicz();
 
     @Override

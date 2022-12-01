@@ -51,6 +51,14 @@ public class Pracownik extends Osoba {
         this.stawka = stawka;
     }
 
+    public int[] getT() {
+        return t;
+    }
+
+    public void setT(int[] t) {
+        this.t = t;
+    }
+
     @Override
     public double Oblicz() {
         double suma = pensja;

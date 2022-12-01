@@ -34,9 +34,15 @@ public class Klient extends Osoba{
     }
 
     public void wyswietlLokaty(){
-        for(int i=0; i<t.length; i++){
-            System.out.println(t[i]);
+        if(n>0){
+            for(int i=0; i<t.length; i++){
+                System.out.println(t[i]);
+            }
         }
+        else{
+            System.out.println("Brak lokat");
+        }
+
     }
 
     @Override

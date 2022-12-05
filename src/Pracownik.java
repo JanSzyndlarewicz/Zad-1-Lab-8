@@ -62,9 +62,12 @@ public class Pracownik extends Osoba {
     @Override
     public double Oblicz() {
         double suma = pensja;
-        for(int i=0; i<t.length; i++){
-            suma += t[i]*stawka;
+        if (t != null) {
+            for(int i=0; i<t.length; i++){
+                suma += t[i]*stawka;
+            }
         }
+
         return suma;
     }
 

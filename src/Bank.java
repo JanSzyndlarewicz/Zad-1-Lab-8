@@ -60,7 +60,7 @@ public class Bank {
 
       do{
          if(t[i] instanceof Pracownik){
-            if(((Pracownik) t[i]).getPensja()>((Pracownik) t[index]).getPensja()){
+            if(((Pracownik) t[i]).Oblicz()>((Pracownik) t[index]).Oblicz()){
                index = i;
             }
          }
@@ -68,7 +68,7 @@ public class Bank {
       }while(i<t.length && t[i]!=null);
 
       System.out.println("Najwięcej zarobił: "+ ((Pracownik) t[index]).getNazwisko()
-              + ", zarobił: " + (((Pracownik) t[index]).getPensja())
+              + ", zarobił: " + (((Pracownik) t[index]).Oblicz())
               + ", na stanowisku: " + ((Pracownik) t[index]).getS());
    }
     public static void main(String[] args) {

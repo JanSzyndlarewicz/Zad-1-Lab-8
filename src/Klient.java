@@ -33,9 +33,12 @@ public class Klient extends Osoba{
     @Override
     public double Oblicz() {
         double suma = 0;
-        for(int i=0; i<t.length; i++){
-            suma += t[i].getKwota();
+        if(n>0){
+            for(int i=0; i<t.length; i++){
+                suma += t[i].getKwota();
+            }
         }
+
         return suma;
     }
 

@@ -7,7 +7,7 @@ public class Bank {
       int i=0;
 
       do{
-         System.out.println(t[i]);
+         System.out.println(t[i].toString());
          i++;
       }while(i<t.length && t[i]!=null);
    }
@@ -67,7 +67,9 @@ public class Bank {
          i++;
       }while(i<t.length && t[i]!=null);
 
-      System.out.println("Najwięcej zarobił: "+ ((Pracownik) t[index]).getNazwisko() + ", zarobił: " + (((Pracownik) t[index]).getPensja()) + ", na stanowisku: " + ((Pracownik) t[index]).getS());
+      System.out.println("Najwięcej zarobił: "+ ((Pracownik) t[index]).getNazwisko()
+              + ", zarobił: " + (((Pracownik) t[index]).getPensja())
+              + ", na stanowisku: " + ((Pracownik) t[index]).getS());
    }
     public static void main(String[] args) {
 
@@ -83,11 +85,20 @@ public class Bank {
        t[8] = new Pracownik();
        t[9] = new Pracownik("Bruk", "62342321", "kasjer", 2590, 22);
 
+       int n = 0;
+       do{
+          n++;
+       }while(n<t.length && t[n]!=null);
+
+
        printAll(t);
        System.out.println();
-       //printEmployeeHours(t);
-       //printKlientAccount(t);
-       //countKasjer(t);
-       //maxSalary(t);
+       printEmployeeHours(t);
+       System.out.println();
+       printKlientAccount(t);
+       System.out.println();
+       countKasjer(t);
+       System.out.println();
+       maxSalary(t);
     }
 }

@@ -1,7 +1,7 @@
 public class Lokata {
     private int nrLokaty;
     private double kwota;
-    boolean isBrokenUp;
+    private boolean isBrokenUp;
 
     public Lokata() {
         nrLokaty = 0;

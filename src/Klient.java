@@ -14,7 +14,13 @@ public class Klient extends Osoba{
 
     public Klient(String nazwisko, String pesel, int n) {
         super(nazwisko, pesel);
-        this.n = n;
+        if(n>0){
+            this.n = n;
+        }
+        else{
+            n = 0;
+        }
+
 
         t = new Lokata[n];
         Random random = new Random();
@@ -28,7 +34,7 @@ public class Klient extends Osoba{
     public double Oblicz() {
         double suma = 0;
         for(int i=0; i<t.length; i++){
-            suma+= t[i].getKwota();
+            suma += t[i].getKwota();
         }
         return suma;
     }
@@ -42,7 +48,6 @@ public class Klient extends Osoba{
         else{
             System.out.println("Brak lokat");
         }
-
     }
 
     @Override

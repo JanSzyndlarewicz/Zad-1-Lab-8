@@ -4,8 +4,8 @@ import java.util.Random;
 public class Pracownik extends Osoba {
 
     private String s;
-    int pensja, stawka;
-    int[] t = new int[6];
+    private int pensja, stawka;
+    private int[] t = new int[6];
 
     public Pracownik(){
         super();
@@ -69,6 +69,7 @@ public class Pracownik extends Osoba {
     }
 
     public void wyswietlLiczbeNadgodzin(){
+        System.out.println("Liczba nadgodzin w poszczególnych dniach tygodnia:");
         System.out.println("Poniedziałek: " + t[0]);
         System.out.println("Wtorek: " + t[1]);
         System.out.println("Środa: " + t[2]);

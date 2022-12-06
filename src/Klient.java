@@ -25,7 +25,7 @@ public class Klient extends Osoba{
         t = new Lokata[n];
         Random random = new Random();
         for(int i=0; i<t.length; i++){
-            t[i] = new Lokata(random.nextInt(9501)+500, random.nextInt(9501)+500, false);
+            t[i] = new Lokata(random.nextInt(9501)+500, (double) Math.round(random.nextDouble(950001)+500)/100, random.nextBoolean());
         }
 
     }

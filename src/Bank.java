@@ -9,7 +9,7 @@ public class Bank {
       do{
          System.out.println(t[i].toString());
          i++;
-      }while(i<t.length && t[i]!=null);
+      }while(i<n);
    }
 
    public static void printEmployeeHours(Osoba[] t){
@@ -18,12 +18,13 @@ public class Bank {
       do{
          if(t[i] instanceof Pracownik){
             System.out.print("nazwisko: " + ((Pracownik) t[i]).getNazwisko() +
-                    ", pesel: " + ((Pracownik) t[i]).getPesel() +
-                    ", nadgodziny w poszczególnych dniach: " + Arrays.toString(((Pracownik) t[i]).getT()) + '\n');
+                    ", pesel: " + ((Pracownik) t[i]).getPesel() + '\n');
+            ((Pracownik) t[i]).wyswietlLiczbeNadgodzin();
+            System.out.println();
          }
 
          i++;
-      }while(i<t.length && t[i]!=null);
+      }while(i<n);
    }
 
    public static void printKlientAccount(Osoba[] t){
@@ -37,7 +38,7 @@ public class Bank {
          }
 
          i++;
-      }while(i<t.length && t[i]!=null);
+      }while(i<n);
    }
 
    public static void countKasjer(Osoba[] t){
@@ -50,7 +51,7 @@ public class Bank {
             }
          }
          i++;
-      }while(i<t.length && t[i]!=null);
+      }while(i<n);
 
       System.out.println("Ilość kasjerów: " + count);
    }
@@ -65,12 +66,14 @@ public class Bank {
             }
          }
          i++;
-      }while(i<t.length && t[i]!=null);
+      }while(i<n);
 
       System.out.println("Najwięcej zarobił: "+ ((Pracownik) t[index]).getNazwisko()
               + ", zarobił: " + (((Pracownik) t[index]).Oblicz())
               + ", na stanowisku: " + ((Pracownik) t[index]).getS());
    }
+
+   static int n = 0;
     public static void main(String[] args) {
 
        Osoba[] t = new Osoba[20];
@@ -85,7 +88,7 @@ public class Bank {
        t[8] = new Pracownik();
        t[9] = new Pracownik("Bruk", "62342321", "kasjer", 2590, 22);
 
-       int n = 0;
+
        do{
           n++;
        }while(n<t.length && t[n]!=null);

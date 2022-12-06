@@ -51,8 +51,14 @@ public class Pracownik extends Osoba {
         this.stawka = stawka;
     }
 
-    public int[] getT() {
-        return t;
+    public String getT() {
+
+        if(t!=null){
+            return Arrays.toString(t);
+        }
+        else{
+            return "Brak nadgodzin";
+        }
     }
 
     public void setT(int[] t) {
@@ -72,13 +78,19 @@ public class Pracownik extends Osoba {
     }
 
     public void wyswietlLiczbeNadgodzin(){
-        System.out.println("Liczba nadgodzin w poszczególnych dniach tygodnia:");
-        System.out.println("Poniedziałek: " + t[0]);
-        System.out.println("Wtorek: " + t[1]);
-        System.out.println("Środa: " + t[2]);
-        System.out.println("Czwartek: " + t[3]);
-        System.out.println("Piątek: " + t[4]);
-        System.out.println("Sobota: " + t[5]);
+        if(t!=null){
+            System.out.println("Liczba nadgodzin w poszczególnych dniach tygodnia:");
+            System.out.println("Poniedziałek: " + t[0]);
+            System.out.println("Wtorek: " + t[1]);
+            System.out.println("Środa: " + t[2]);
+            System.out.println("Czwartek: " + t[3]);
+            System.out.println("Piątek: " + t[4]);
+            System.out.println("Sobota: " + t[5]);
+        }
+        else{
+            System.out.println("Brak nadgodzin");
+        }
+
     }
 
     public boolean jestKasjerem(){
@@ -92,13 +104,26 @@ public class Pracownik extends Osoba {
 
     @Override
     public String toString() {
-        return "Pracownik{" +
-                "nazwisko='" + getNazwisko() + '\'' +
-                ", pesel='" + getPesel() + '\'' +
-                "s='" + s + '\'' +
-                ", pensja=" + pensja +
-                ", stawka=" + stawka +
-                ", t=" + Arrays.toString(t) +
-                '}';
+        if(t!=null){
+            return "Pracownik{" +
+                    "nazwisko='" + getNazwisko() + '\'' +
+                    ", pesel='" + getPesel() + '\'' +
+                    "s='" + s + '\'' +
+                    ", pensja=" + pensja +
+                    ", stawka=" + stawka +
+                    ", t=" + Arrays.toString(t) +
+                    '}';
+        }
+        else{
+            return "Pracownik{" +
+                    "nazwisko='" + getNazwisko() + '\'' +
+                    ", pesel='" + getPesel() + '\'' +
+                    ", s='" + s + '\'' +
+                    ", pensja=" + pensja +
+                    ", stawka=" + stawka +
+                    ", t=" + "brak godzin do wyświetlenia" +
+                    '}';
+        }
+
     }
 }
